@@ -13,10 +13,8 @@ document.addEventListener('scroll', () => {
     }
 });
 
-
+// Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
-const about = document.querySelector('#about');
-const aboutLocation = (about.getBoundingClientRect().height)-navbarHeight;
 
 navbarMenu.addEventListener('click', (event) => {
     const target = event.target;
