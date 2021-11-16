@@ -4,15 +4,12 @@
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
-  --color-light-purple: #e6ceff;
-  --color-purple: #b180cc;
-  --color-dark-purple: #a56db6;
-  /* --color-dark-purple: #80539b; */
   --color-black: #000000;
   --color-dark-grey: #4b4b4b;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
   --color-blue: #73aace;
+  --color-green: #c2d6d4;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
 
@@ -41,14 +38,15 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Roboto Mono', monospace;
   margin: 0;
   cursor: default;
 }
 
 a {
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--color-light-grey);
 }
 
 ul {
@@ -62,33 +60,36 @@ button {
   border: none;
   outline: none;
   padding: 0;
+  color: var(--color-light-grey);
+  font-family: 'Roboto Mono', monospace;
 }
 
 /* Typography */
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
-  color: var(--color-black);
+  color: var(--color-light-grey);
   margin: 16px 0px;
 }
 
 h2 {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
-  color: 8px 0;
+  color: var(--color-light-grey);
+  margin: 8px 0;
 }
 
 h3 {
   font-size: var(--font-regular);
   font-weight: var(--font-regular);
-  color: var(--color-black);
+  color: var(--color-light-grey);
   margin: 8px 0;
 }
 
 p {
   font-size: var(--font-regular);
   font-weight: var(--font-regular);
-  color: var(--color-black);
+  color: var(--color-light-grey);
   margin: 4px 0;
 }
 
@@ -100,15 +101,16 @@ p {
   justify-content: space-between;
   background-color: transparent;
   align-items: center;
-  color: var(--color-white);
-  padding: 16px;
+  color: var(--color-light-grey);
+  padding: 2px;
   transition: all var(--animation-duration) ease-in-out;
   z-index: 1;
+  user-select: none;
 }
 
 #navbar.navbar--dark {
-  background-color: var(--color-dark-purple);
-  padding: 8px;
+  background-color: var(--color-green);
+  padding: 2px;
 }
 
 .navbar__menu {
@@ -116,6 +118,7 @@ p {
 }
 
 .navbar__logo {
+  margin-left: 12px;
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
 }
@@ -123,36 +126,37 @@ p {
 .navbar__menu__item {
   padding: 8px 12px;
   margin: 0 4px;
-  color: var(--color-white);
+  color: var(--color-light-grey);
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: var(--size-border-radius);
 }
 
 .navbar__menu__item.active {
-  border: 1px solid var(--color-white);
+  border: 1px solid var(--color-light-grey);
 }
 
 .navbar__menu__item:hover {
   border: 1px solid transparent;
-  background-color: var(--color-blue);
+  background-color: var(--color-green);
 }
 
 .navbar__toggle-btn {
   position: absolute;
   top: 18px;
   right: 32px;
-  color: var(--color-white);
+  color: var(--color-light-grey);
   font-size: 24px;
   display: none;
 }
 
 /* Home */
 #home {
-  background: url("imgs/home-background.png") center/cover no-repeat;
   padding: 40px;
   padding-top: 120px;
   text-align: center;
+  background: url('imgs/bg.png') center/cover no-repeat;
+  user-select: none;
 }
 
 .home__avatar {
@@ -162,16 +166,16 @@ p {
 
 .home__title,
 .home__description {
-  color: var(--color-white);
+  color: var(--color-light-grey);
 }
 
 .home__contact {
-  color: var(--color-white);
+  color: var(--color-light-grey);
   font-size: var(--font-regular);
   font-weight: var(--weight-bold);
   margin: 24px;
   padding: 8px 12px;
-  border: 2px solid var(--color-white);
+  border: 2px solid var(--color-light-grey);
   border-radius: var(--size-border-radius);
 }
 
@@ -193,6 +197,10 @@ p {
 }
 
 /* About */
+#about {
+  user-select: none;
+}
+
 .about__major {
   display: flex;
   justify-content: space-around;
@@ -215,7 +223,7 @@ p {
 }
 
 .major__icon:hover i {
-  color: var(--color-light-purple);
+  color: var(--color-green);
   transform: rotate(-30deg) scale(1.1);
 }
 
@@ -225,6 +233,8 @@ p {
 }
 
 .major__description {
+  width: 260px;
+  margin: auto;
   font-size: var(--font-small);
 }
 
@@ -259,6 +269,7 @@ p {
 /* Skills */
 #skills {
   background-color: var(--color-yellow);
+  user-select: none;
 }
 
 .skillset {
@@ -313,12 +324,16 @@ p {
 }
 
 /* Work */
+#work {
+  user-select: none;
+}
+
 .work__categories {
   margin: 40px;
 }
 
 .category__btn {
-  border: 1px solid var(--color-dark-white);
+  border: 1px solid var(--color-light-grey);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
@@ -326,7 +341,7 @@ p {
 
 .category__btn.selected,
 .category__btn:hover {
-  background-color: var(--color-light-purple);
+  background-color: var(--color-green);
   color: var(--color-white);
 }
 
@@ -409,7 +424,7 @@ p {
 }
 
 .project__description h3:after {
-  content: "";
+  content: '';
   display: block;
   position: relative;
   left: 50%;
@@ -423,6 +438,7 @@ p {
 /* Testimonials */
 #testimonials {
   background-color: var(--color-light-white);
+  user-select: none;
 }
 
 .testimonials {
@@ -460,21 +476,17 @@ p {
   color: var(--color-light-grey);
 }
 
-.testimonial__speech-bubble a {
-  color: var(--color-dark-purple);
-}
-
 /* Contact */
 
 #contact {
-  background-color: var(--color-purple);
-  color: var(--color-white);
+  background: url('imgs/bg-bottom.png') center/cover no-repeat;
+  user-select: none;
 }
 
 .contact__title,
 .contact__email,
 .contact__rights {
-  color: var(--color-white);
+  color: var(--color-light-grey);
 }
 
 .contact__title {
@@ -488,7 +500,7 @@ p {
 
 .contact__links i:hover {
   transform: scale(1.1);
-  color: var(--color-dark-purple);
+  color: var(--color-green);
   transition: all var(--animation-duration) ease-in;
 }
 
@@ -504,7 +516,7 @@ p {
   width: 70px;
   height: 70px;
   font-size: 50px;
-  color: var(--color-light-purple);
+  color: var(--color-light-grey);
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
@@ -529,7 +541,6 @@ p {
 
   .navbar__toggle-btn {
     display: block;
-    top: 21px;
     right: 21px;
     font-size: var(--font-medium);
   }
@@ -537,7 +548,7 @@ p {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--color-dark-purple);
+    background-color: var(--color-green);
   }
 
   #navbar.navbar--dark {
